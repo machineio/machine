@@ -99,8 +99,6 @@ fun.Router = Backbone.Router.extend({
         } else {
             fun.utils.redirect(fun.conf.hash.landing);
         }
-        fun.instances.extra.render();
-        fun.instances.footer.render();
     },
 
     landing: function(){
