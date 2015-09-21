@@ -79,11 +79,6 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-landing"
         });
 
-        // howto
-        fun.instances.howto = new fun.views.howto({
-            el:"#fun-howto"
-        });
-
         // features
         fun.instances.features = new fun.views.features({
             el:"#fun-features"
@@ -92,36 +87,6 @@ fun.Router = Backbone.Router.extend({
         // enterprise
         fun.instances.enterprise = new fun.views.enterprise({
             el:"#fun-enterprise"
-        });
-
-        // terms
-        fun.instances.terms = new fun.views.terms({
-            el:"#fun-terms"
-        });
-
-        // privacy
-        fun.instances.privacy = new fun.views.privacy({
-            el:"#fun-privacy"
-        });
-
-        // security
-        fun.instances.security = new fun.views.security({
-            el:"#fun-security"
-        });
-
-        // status
-        fun.instances.status = new fun.views.status({
-            el:"#fun-status"
-        });
-
-        // developers
-        fun.instances.developers = new fun.views.developers({
-            el:"#fun-developers"
-        });
-
-        // help
-        fun.instances.help = new fun.views.help({
-            el:"#fun-help"
         });
 
         // login
@@ -134,124 +99,14 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-dashboard"
         });
 
-        // orgs
-        fun.instances.orgs = new fun.views.orgs({
-            el:"#fun-orgs"
-        });
-
-        // profile
-        fun.instances.profile = new fun.views.profile({
-            el:"#fun-profile"
-        });
-
-        // activity
-        fun.instances.activity = new fun.views.activity({
-            el:"#fun-activity"
-        });
-
-        // members
-        fun.instances.members = new fun.views.members({
-            el:"#fun-members"
-        });
-
-        // teams
-        fun.instances.teams = new fun.views.teams({
-            el:"#fun-teams"
-        });
-
-        // phone
-        fun.instances.phone = new fun.views.phone({
-            el:"#fun-phone"
-        });
-
-        // phone numbers
-        fun.instances.phoneNumbers = new fun.views.phoneNumbers({
-            el:"#fun-phone-numbers"
-        });
-
-        // gateways
-        fun.instances.gateways = new fun.views.gateways({
-            el:"#fun-gateways"
-        });
-
-        // carriers
-        fun.instances.carriers = new fun.views.carriers({
-            el:"#fun-carriers"
-        });
-
         // tasks
         fun.instances.tasks = new fun.views.tasks({
             el:"#fun-tasks"
         });
 
-        // companies
-        fun.instances.companies = new fun.views.companies({
-            el:"#fun-companies"
-        });
-
-        // campaigns
-        fun.instances.campaigns = new fun.views.campaigns({
-            el:"#fun-campaigns"
-        });
-
-        // contacts
-        fun.instances.contacts = new fun.views.contacts({
-            el:"#fun-contacts"
-        });
-        
-        // cubes
-        fun.instances.cubes = new fun.views.cubes({
-            el:"#fun-cubes"
-        });
-
-        // recordings
-        fun.instances.recordings = new fun.views.recordings({
-            el:"#fun-recordings"
-        });
-
-        // accounts
-        fun.instances.accounts = new fun.views.accounts({
-            el:"#fun-accounts"
-        });
-
-        // resources
-        fun.instances.resources = new fun.views.resources({
-            el:"#fun-resources"
-        });
-
-        // messages
-        fun.instances.messages = new fun.views.messages({
-            el:"#fun-messages"
-        });
-        
-        // sounds
-        fun.instances.sounds = new fun.views.sounds({
-            el:"#fun-sounds"
-        });
-
-        // reports
-        fun.instances.reports = new fun.views.reports({
-            el:"#fun-reports"
-        });
-        
-        // support
-        fun.instances.support = new fun.views.support({
-            el:"#fun-support"
-        });
-
         // signup
         fun.instances.signup = new fun.views.signup({
             el:"#fun-signup"
-        });
-        
-        // settings
-        fun.instances.settings = new fun.views.settings({
-            el:"#fun-settings"
-        });
-
-        // extra
-        fun.instances.extra = new fun.views.extra({
-            el:"#fun-extra"
         });
 
         // footer
