@@ -14,6 +14,10 @@
 	font-size:95px;
 }
 
-.font-wellcome{
-	font-size:16px;
+.welcome-font{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    color: #4e4e4e;
+    padding-top: 0px;
 }
