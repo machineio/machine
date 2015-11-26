@@ -122,9 +122,9 @@ fun.Router = Backbone.Router.extend({
     landing: function(){
         'use strict';
         fun.utils.hideAll();
-        //fun.instances.navbar.render();
-        //fun.instances.landing.render();
-        //fun.instances.footer.render();
+        fun.instances.navbar.render();
+        fun.instances.landing.render();
+        fun.instances.footer.render();
     },
 
     features: function(){
