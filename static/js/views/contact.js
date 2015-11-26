@@ -1,4 +1,4 @@
-fun.views.contacts = Backbone.View.extend({
+fun.views.contact = Backbone.View.extend({
 
     /**
     * Bind the event functions to the different HTML elements
@@ -14,7 +14,7 @@ fun.views.contacts = Backbone.View.extend({
     * Class constructor
     */
     initialize: function(options){
-        fun.containers.contacts = this.$el;
+        fun.containers.contact = this.$el;
     },
 
     /**
@@ -23,9 +23,9 @@ fun.views.contacts = Backbone.View.extend({
     render: function(){
         'use strict';
         var template;
-        console.log('render contacts view');
+        console.log('render contact view');
         if (!this.$el.html()){
-            template = _.template(fun.utils.getTemplate(fun.conf.templates.contacts));
+            template = _.template(fun.utils.getTemplate(fun.conf.templates.contact));
             this.$el.html(template);
             // DOM cache stuff on form fields
             this.contactFirstName = this.$('#contact_first_name');
