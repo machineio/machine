@@ -1,32 +1,70 @@
-
-<div class="navbar navbar-inverse navbar-static-top">
-    
+<header id="header">
     <div class="container">
+        <div class="col-md-12">
+            <div class="main-menu">
+                <!-- START - MINIMAL CSS3 MENU -->
+                <label class="minimal-menu-button" for="mobile-nav">Menu</label>
+                <input class="minimal-menu-button" type="checkbox" id="mobile-nav" name="mobile-nav" />
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle"  data-toggle="collapse" data-target=".bs-navbar-collapse">
-                <span class="sr-only"><%= translate("ioFunNavigation") %></span>
-                <!-- navbar icon-->
-                <span class="fa-stack fa-2x">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-paw fa-stack-1x"></i>
-            </span>
-            </button>
-      
-            <a class="navbar-brand" href="#home">
-                <%= translate("iofun") %>
-            </a>
+                <div class="minimal-menu">
+                    <div class="logo">
+                        <a href="index.html"><img src="static/images/logo.png" alt="" ></a>
+                    </div>
+
+                    <ul class="wrapper">
+                        <li class="submenu">
+                            <a href="index.html">Home</a>
+                            <input class="show-submenu" type="checkbox" name="show-submenu-1" />
+                        </li>
+
+                        <li class="submenu">
+                            <a href="">Branches</a>
+                            <input class="show-submenu" type="checkbox" name="show-submenu-2" />
+                            <ul>
+                            <li><a href="#call-machine">call machine</a></li>
+                            <li><a href="#digital-machine">digital machine</a></li>
+                            <li><a href="#tech-machine">tech machine</a></li>
+                            <li><a href="#email-machine">email machine</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="submenu">
+                            <a href="#enterprise.html">Enterprise</a>
+                            <input class="show-submenu" type="checkbox" name="show-submenu-2" />
+                        </li>
+
+                        <li class="submenu">
+                            <a href="#contact.html">Contact</a>
+                            <input class="show-submenu" type="checkbox" name="show-submenu-1"/>
+                        </li>
+
+                        <li>
+                              <div class="popover_parent">
+                                  <a href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                                  <fieldset class="popover search">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                    <input type="submit" class="btn-1" value="Go">
+                                  </fieldset>
+                              </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END - MINIMAL CSS3 MENU -->
+            </div>
         </div>
-
-        <div class="collapse navbar-collapse bs-navbar-collapse">
-            <!-- renderLanding -->
-            <div id="fun-nav-landing"></div>
-            <!-- renderDashboard -->
-            <div id="fun-nav-dashboard"></div>
-            <!-- renderAdmin -->
-            <div id="fun-nav-admin"></div>
-        </div>
-
     </div>
+    <div class="container welcome">
+        <div class="col-md-12">
+            <img src="static/images/man-shadow.png" class="shadow-man img-responsive" alt="" />
+        </div>
 
-</div>
+        <div class="col-md-12">
+            <h2>WELCOME TO</h2>
+            <h1>Code<span class="color-codemachine">Machine</span></h1>
+            <span class="welcome-font-codemachine">DESIGN - TECHNOLOGY - COMMUNICATIONS</span>
+            <div><span class="welcome-font-codemachine-2">Innovative solutions to promote your business</span></div>
+            
+        </div>
+    </div>
+</header>
