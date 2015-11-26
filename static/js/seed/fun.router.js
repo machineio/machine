@@ -15,8 +15,9 @@ fun.Router = Backbone.Router.extend({
         "dashboard/a:account/o:org": "dashboard",
         "signup": "signup",
         "login": "login",
-        "features": "features",
+        "branches": "branches",
         "enterprise": "enterprise",
+        "contact": "contact",
 
         "tasks": "tasks",
         "tasks/p:page": "tasks",
@@ -32,19 +33,14 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-navbar"
         });
 
-        // sub header
-        fun.instances.subheader = new fun.views.subheader({
-            el:"#fun-subheader"
-        });
-
         // landing
         fun.instances.landing = new fun.views.landing({
             el:"#fun-landing"
         });
 
-        // features
-        fun.instances.features = new fun.views.features({
-            el:"#fun-features"
+        // branches
+        fun.instances.branches = new fun.views.branches({
+            el:"#fun-branches"
         });
 
         // enterprise
@@ -62,14 +58,14 @@ fun.Router = Backbone.Router.extend({
             el:"#fun-dashboard"
         });
 
-        // tasks
-        fun.instances.tasks = new fun.views.tasks({
-            el:"#fun-tasks"
-        });
-
         // signup
         fun.instances.signup = new fun.views.signup({
             el:"#fun-signup"
+        });
+
+        // contact
+        fun.instances.contact = new fun.views.contact({
+            el:"#fun-contact"
         });
 
         // footer
