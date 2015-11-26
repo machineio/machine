@@ -254,22 +254,34 @@ fun.Router = Backbone.Router.extend({
 
     callMachine: function(){
         'use strict';
-        console.log('call-machine');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.callMachine.render();
+        fun.instances.footer.render();
     },
 
     digitalMachine: function(){
         'use strict';
-        console.log('digital-machine');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.digitalMachine.render();
+        fun.instances.footer.render();
     },
 
     techMachine: function(){
         'use strict';
-        console.log('tech-machine');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.techMachine.render();
+        fun.instances.footer.render();
     },
 
     emailMachine: function(){
         'use strict';
-        console.log('email-machine');
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        fun.instances.emailMachine.render();
+        fun.instances.footer.render();
     },
     
     dashboard: function(account, org){
