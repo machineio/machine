@@ -19,6 +19,11 @@ fun.Router = Backbone.Router.extend({
         "enterprise": "enterprise",
         "contact": "contact",
 
+        "email-machine": "emailMachine",
+        "digital-machine": "digitalMachine",
+        "tech-machine": "techMachine",
+        "call-machine": "callMachine",
+
         "tasks": "tasks",
         "tasks/p:page": "tasks",
 
@@ -56,6 +61,23 @@ fun.Router = Backbone.Router.extend({
         // dashboard
         fun.instances.dashboard = new fun.views.dashboard({
             el:"#fun-dashboard"
+        });
+
+        // email machine
+        fun.instances.emailMachine = new fun.views.emailMachine({
+            el:"#fun-email-machine"
+        });
+        // digital machine
+        fun.instances.digitalMachine = new fun.views.digitalMachine({
+            el:"#fun-digital-machine"
+        });
+        // call machine
+        fun.instances.callMachine = new fun.views.callMachine({
+            el:"#fun-call-machine"
+        });
+        // tech machine
+        fun.instances.techMachine = new fun.views.techMachine({
+            el:"#fun-tech-machine"
         });
 
         // signup
@@ -228,6 +250,26 @@ fun.Router = Backbone.Router.extend({
         }
 
         //fun.instances.footer.render();
+    },
+
+    callMachine: function(){
+        'use strict';
+        console.log('call-machine');
+    },
+
+    digitalMachine: function(){
+        'use strict';
+        console.log('digital-machine');
+    },
+
+    techMachine: function(){
+        'use strict';
+        console.log('tech-machine');
+    },
+
+    emailMachine: function(){
+        'use strict';
+        console.log('email-machine');
     },
     
     dashboard: function(account, org){
