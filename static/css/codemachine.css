@@ -34,3 +34,7 @@
 .font-code2{
     font-size:18px;
 }
+
+.mycontent-left {
+  border-right: 3px solid #4e4e4e;
+}
