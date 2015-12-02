@@ -4474,6 +4474,8 @@ footer .foot-logo{
 	background:#fff;
 	color:#bea473;
 	transition:.3s;
+	padding-left: 20px;
+    padding-right: 20px;
 }
 
 /*--- Shop Pages --*/
@@ -4482,8 +4484,6 @@ footer .foot-logo{
 	background-size:cover;
 	padding-top:140px;
 	padding-bottom:140px;
-	padding-left: 20px;
-    padding-right: 20px;
 }
 
 .shop .welcome-msg{
