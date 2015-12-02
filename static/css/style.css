@@ -4411,6 +4411,8 @@ footer .foot-logo{
 	padding-top:10px;
 	padding-bottom:40px;
 	transition:.3s;
+	padding-left: 20px;
+    padding-right: 20px;
 }
 
 .table-box:hover {
@@ -4474,8 +4476,7 @@ footer .foot-logo{
 	background:#fff;
 	color:#bea473;
 	transition:.3s;
-	padding-left: 20px;
-    padding-right: 20px;
+
 }
 
 /*--- Shop Pages --*/
