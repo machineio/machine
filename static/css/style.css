@@ -1674,6 +1674,8 @@ h2{
 	text-align:center;
 	padding:30px 10px 35px 10px;
 	transition:.3s;
+	margin-left: 20px;
+    margin-right: 20px;
 }
 
 .strategy-boxes .strategy-box:hover {
