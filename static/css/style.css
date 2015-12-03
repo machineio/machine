@@ -1562,8 +1562,8 @@ h2{
 .unique .uni-main .right h3{
 	color:#fff;
 	font-size:40px;
-	border-top:1px solid #fff;
-	border-bottom:1px solid #fff;
+	border-top:1px solid #a8c14c;
+	border-bottom:1px solid #a8c14c;
 	padding-top:20px;
 	padding-bottom:20px;
 }
@@ -2255,7 +2255,7 @@ content: '\f068';
 	color:#fefefe;
 	border:1px solid #4e4e4e;
 	border-radius:4px;
-	padding:4px 10px 4px 10px;
+	padding:4px 10px 4px 10px;	
 	display:inline-block;
 	margin-top:5px;
 	transition:.3s;
