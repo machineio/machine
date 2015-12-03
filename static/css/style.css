@@ -4461,6 +4461,7 @@ footer .foot-logo{
 
 .table-box .feature-list li{
 	padding-top:10px;
+	text-align: -webkit-center;
 }
 
 .table-box .table-btn{
