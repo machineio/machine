@@ -26,6 +26,7 @@ fun.views.navbar = Backbone.View.extend({
         console.log(fun.utils.loggedIn());
 
         if(fun.utils.loggedIn()){
+            $('#header').addClass('about-header');
             console.log('Just enter the dungeon!');
             this.renderDashboard();
         } else {
