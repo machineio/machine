@@ -22,9 +22,6 @@ fun.views.navbar = Backbone.View.extend({
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
 
-        console.log("Logged IN");
-        console.log(fun.utils.loggedIn());
-
         if(fun.utils.loggedIn()){
             $('#header').addClass('about-header');
             console.log('Just enter the dungeon!');
