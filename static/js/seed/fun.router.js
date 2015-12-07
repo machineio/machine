@@ -123,7 +123,7 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
-        this.$('#header').removeClass("about-header");
+        $('#header').removeClass("about-header");
 
         fun.instances.landing.render();
         fun.instances.footer.render();
