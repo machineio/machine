@@ -123,6 +123,8 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').removeClass("about-header");
+
         fun.instances.landing.render();
         fun.instances.footer.render();
     },
@@ -132,6 +134,7 @@ fun.Router = Backbone.Router.extend({
         var features = translate('features');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         //fun.instances.subheader.render(features);
         fun.instances.features.render();
         fun.instances.footer.render();
@@ -142,6 +145,7 @@ fun.Router = Backbone.Router.extend({
         var enterprise = translate('enterprise');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         //fun.instances.subheader.render(enterprise);
         fun.instances.enterprise.render();
         fun.instances.footer.render();
@@ -152,6 +156,7 @@ fun.Router = Backbone.Router.extend({
         var terms = translate('terms');
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         fun.instances.subheader.render(terms);
         fun.instances.terms.render();
         fun.instances.footer.render();
@@ -256,6 +261,7 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         fun.instances.callMachine.render();
         fun.instances.footer.render();
     },
@@ -264,6 +270,7 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         fun.instances.digitalMachine.render();
         fun.instances.footer.render();
     },
@@ -272,6 +279,7 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         fun.instances.techMachine.render();
         fun.instances.footer.render();
     },
@@ -280,6 +288,7 @@ fun.Router = Backbone.Router.extend({
         'use strict';
         fun.utils.hideAll();
         fun.instances.navbar.render();
+        this.$('#header').addClass("about-header");
         fun.instances.emailMachine.render();
         fun.instances.footer.render();
     },
