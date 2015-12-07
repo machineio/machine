@@ -364,9 +364,16 @@ body{
 	outline: none;
 }
 
+header.navbar_header {
+	position: absolute;
+    z-index: 90;
+    background: transparent;
+    width: 100%;
+}
+
 header {
 	background: url(../images/sky1.jpg) no-repeat;
-	background-size:cover;
+	background-size:contain;
 }
 
 .about-header{
