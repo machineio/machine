@@ -2962,6 +2962,17 @@ footer .foot-logo{
 	-moz-box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
 	box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
 }
+.about-us-digital{
+	text-align:center;
+	background: #f3f4f7 url(../images/digitalmachine.png) no-repeat;
+	background-size:cover;
+	text-align:right;
+	padding-top:120px;
+	padding-bottom:120px;
+	-webkit-box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+	box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+}
 
 
 .about-us h2{
