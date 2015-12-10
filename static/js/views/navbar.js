@@ -1,7 +1,9 @@
 fun.views.navbar = Backbone.View.extend({
 
 	events: {
-        "click #details-report-btn": 'detailsReport'
+        'click #details-report-btn': 'detailsReport',
+        'click #machine-login': 'machineLogin',
+        'click #machine-register': 'machineRegister'
 	},
 
     initialize: function(options) {
@@ -87,5 +89,30 @@ fun.views.navbar = Backbone.View.extend({
 
     detailsReport: function() {
         console.log('navbar detail reports')
-    }
+    },
+
+    /*
+    * Machine login
+    */
+    machineLogin: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+            stuff;
+
+        console.log('machine login');
+    },
+
+    /*
+    * Machine register
+    */
+    machineRegister: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+            stuff;
+
+        console.log('machine register');
+    },
+
 });
