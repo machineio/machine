@@ -4462,6 +4462,8 @@ footer .foot-logo{
 	color:#4f4f4f;
 	line-height:8;
 	transition:.3s;
+	margin-top: 10px
+	margin-bottom: 10px;
 }
 
 .table-box:hover .table-icon{
