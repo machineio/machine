@@ -101,7 +101,7 @@ fun.views.navbar = Backbone.View.extend({
         'use strict';
         event.preventDefault();
         var view = this,
-            loginError,
+            loginError = this.loginError,
             loginSuccess,
             username,
             password;
