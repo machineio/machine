@@ -288,7 +288,7 @@ fun.views.contact = Backbone.View.extend({
     /*
     * Machine login
     */
-    addContact: function(event){
+    machineLogin: function(event){
         'use strict';
         event.preventDefault();
         var view = this,
@@ -300,7 +300,7 @@ fun.views.contact = Backbone.View.extend({
     /*
     * Machine register
     */
-    addContact: function(event){
+    machineRegister: function(event){
         'use strict';
         event.preventDefault();
         var view = this,
