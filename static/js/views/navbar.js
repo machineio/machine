@@ -24,6 +24,9 @@ fun.views.navbar = Backbone.View.extend({
         this.$el.html(template);
         this.$el.removeClass("hide").addClass("show");
 
+        // Cache the DOM stuff
+        this.loginError = this.$('#signin-alert');
+
         if(fun.utils.loggedIn()){
             $('#header').addClass('about-header');
             console.log('Just enter the dungeon!');
@@ -102,11 +105,6 @@ fun.views.navbar = Backbone.View.extend({
             loginSuccess,
             username,
             password;
-
-        console.log('machine login');
-
-        event.preventDefault();
-        
         
         loginSuccess = function(view, loginError){
             // Clear the stuff from the inputs ;)
