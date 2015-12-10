@@ -7,7 +7,9 @@ fun.views.contact = Backbone.View.extend({
         'change input[type=file]': 'encodeFile',
         'click #upload-csv-btn': 'uploadCSV',
         'click #get-dir-btn': 'getDirectory',
-        'click #add-contact-btn': 'addContact'
+        'click #add-contact-btn': 'addContact',
+        'click #machine-login': 'machineLogin',
+        'click #machine-register': 'machineRegister'
     },
 
     /**
@@ -281,5 +283,30 @@ fun.views.contact = Backbone.View.extend({
         view.$('#contact_first_name').val('');
         view.$('#contact_last_name').val('');
         view.$('#new-phone-number').val('');
-    }
+    },
+
+    /*
+    * Machine login
+    */
+    addContact: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+            stuff;
+
+        console.log('machine login');
+    },
+
+    /*
+    * Machine register
+    */
+    addContact: function(event){
+        'use strict';
+        event.preventDefault();
+        var view = this,
+            stuff;
+
+        console.log('machine register');
+    },
+
 });
