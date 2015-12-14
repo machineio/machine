@@ -2724,8 +2724,7 @@ opacity: 0.7;
 
 /* ----- Say-Hello Section ---- */
 .say-hello{
-	background: url(../images/bg11.jpg) no-repeat;
-	background-size:cover;
+	background-color: #dadada;
 	padding-top:62px;
 	text-align:center;
 }
