@@ -1351,7 +1351,7 @@ h2{
   bottom: 0;
   left: 0;
   right: 0;
-  background: #fff;
+  background: #CCC;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
   -webkit-transform-origin: 50%;
@@ -2724,7 +2724,7 @@ opacity: 0.7;
 
 /* ----- Say-Hello Section ---- */
 .say-hello{
-	background-color: #dadada;
+	background-color: #fff;
 	padding-top:62px;
 	text-align:center;
 }
