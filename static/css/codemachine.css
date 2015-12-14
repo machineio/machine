@@ -65,8 +65,9 @@
     text-align: center;
     position: relative;
 
-.color-codemachine{
-    color:#fff;
+.support-code {
+    background: #4e4e4e;
+    padding-top: 100px;
 }
 
 
