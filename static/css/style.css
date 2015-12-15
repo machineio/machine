@@ -2990,6 +2990,11 @@ footer .foot-logo{
 	color:#a8c14c;
 }
 
+.about-us p{
+	color:#4e4e4e;
+	padding-top:20px;
+}
+
 .about-us-digital p{
 	color:#4e4e4e;
 	padding-top:20px;
@@ -3000,10 +3005,16 @@ footer .foot-logo{
 	color:#a8c14c;
 }
 
-.about-us p{
+.about-us-tech p{
 	color:#4e4e4e;
 	padding-top:20px;
 }
+
+.about-us-tech h2{
+	font-size:55px;
+	color:#a8c14c;
+}
+
 
 .meet-team{
 	background:#fff;
