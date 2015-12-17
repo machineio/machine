@@ -202,6 +202,7 @@ fun.conf.templates = {
     teams: fun.utils.format('%s/teams.html', fun.conf.html),
     teamRow: fun.utils.format('%s/teamRow.html', fun.conf.html),
 
+    contact: fun.utils.format('%s/contact.html', fun.conf.html),
     contacts: fun.utils.format('%s/contacts.html', fun.conf.html),
     allContacts: fun.utils.format('%s/allContacts.html', fun.conf.html),
 
@@ -236,6 +237,7 @@ fun.conf.templates = {
 fun.conf.hash = {
     home: '#home',
     landing: '#landing',
+    contact: '#contact',
     howto: '#howto',
     features: '#features',
     enterprise: '#enterprise',

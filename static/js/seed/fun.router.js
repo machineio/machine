@@ -257,6 +257,15 @@ fun.Router = Backbone.Router.extend({
         //fun.instances.footer.render();
     },
 
+    contact: function(){
+        'use strict';
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
+        $('#header').addClass("about-header");
+        fun.instances.contact.render();
+        fun.instances.footer.render();
+    },
+
     callMachine: function(){
         'use strict';
         fun.utils.hideAll();
