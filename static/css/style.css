@@ -3006,6 +3006,18 @@ footer .foot-logo{
 	box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
 }
 
+.about-us-contact{
+	text-align:center;
+	background: #f3f4f7 url(../images/enterprise.png) no-repeat;
+	background-size:cover;
+	text-align:right;
+	padding-top:120px;
+	padding-bottom:120px;
+	-webkit-box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+	-moz-box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+	box-shadow: 0px -10px 26px 0px rgba(0,0,0,0.05);
+}
+
 .about-us h2{
 	font-size:55px;
 	color:#a8c14c;
@@ -3054,7 +3066,15 @@ footer .foot-logo{
 	font-size:55px;
 	color:#a8c14c;
 }
+.about-us-contact p{
+	color:#4e4e4e;
+	padding-top:20px;
+}
 
+.about-us-contact h2{
+	font-size:55px;
+	color:#a8c14c;
+}
 .meet-team{
 	background:#fff;
 	background-size:cover;
