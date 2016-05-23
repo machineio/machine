@@ -1,3 +1,21 @@
+@media screen and (max-width: 764px) {
+    .organic-title h2 {
+        font-size: 5vh !important;
+    }
+
+    .organic-big-title h2 {
+        font-size: 7vh !important;
+    }
+
+    .media-full-width {
+        width: 100%;
+    }
+
+    .tables-1.equal {
+        margin-left: 0 !important;
+    }
+}
+
 .color-codemachine{
 	color:#4e4e4e;
 }
