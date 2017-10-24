@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "sass": "gulp sass:watch",
+    "build": "gulp build",
+    "dev": "gulp"
+  },
+  "dependencies": {
+    "package": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-concat": "2.6.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-dest": "~0.2.3",
+    "gulp-eslint": "4.0.0",
+    "gulp-if": "~2.0.2",
+    "gulp-sass": "~3.1.0",
+    "gulp-uglify": "~2.0.0",
+    "gulp-util": "~3.0.7",
+    "gulp-webserver": "~0.9.1"
+  }
+}
