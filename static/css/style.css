@@ -7713,3 +7713,55 @@ box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.35);
 .pattern4 {
 	background: url(../images/patterns/5.png) repeat;
 }
+
+
+.center {
+	left: 50%;
+    transform: translate(-50%);
+}
+
+.left {
+	text-align: left;
+}
+
+.right-corner {
+	text-align: right;
+    margin-top: 3%;
+}
+
+.display-block {
+	display: block;
+}
+
+.gray {
+	background: #cecece;
+}
+
+
+form {
+	padding-top: 3%;
+    padding-bottom: 8%;	
+}
+
+form label {
+	text-align: left;
+	display: block;
+	text-transform: uppercase;
+	color:gray;
+}
+
+form textarea,
+form input {
+	width: 100%;
+	margin-bottom: 4%;
+	padding-top: 3%;
+}
+
+form button {
+	padding: 4% 5% 4% 5%;
+	width: 50%;
+	border-style: none;
+	background-color: #a8c14c;
+	letter-spacing: .5px;
+	font-weight: bold;
+}
