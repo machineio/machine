@@ -1,19 +1,14 @@
-import Backbone from 'backbone'
+/*
+* Fun namespace object
+*/
+var fun = {
+    sent: "", 
+};
 
-class EmailModel extends Backbone.Model {
-  get defaults () {
-    return {
-      account: ''
-    }
-  }
-
-  get urlRoot () {
-    return 'https://lb.spartanapproach.com/emails/'
-  }
-
-  get idAttribute () {
-    return 'uuid'
-  }
+getUrl = function() {
+  return "https://lb.spartanapproach.com/emails/";
 }
 
-export default EmailModel
+idAttribute = function() {
+  return "uuid";
+}
