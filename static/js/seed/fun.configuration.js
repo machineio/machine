@@ -39,28 +39,10 @@ fun.conf = {
  System urls
 */
 fun.conf.urls = {
-
-    login: '/login/',
-    logout: '/logout/',
-
-    user: fun.utils.format('/users/%s', fun.conf.account),
-    users: '/users/',
-
-    record: fun.utils.format('/records/%s', fun.conf.uuidRecord),
-    records: '/records/',
-
-    recordsStart: fun.utils.format('/records/start/%s', fun.conf.startTime),
-    recordsStartEnd: fun.utils.format('/records/start/%s/end/%s', fun.conf.startTime, fun.conf.endTime),
-
-    contact: fun.utils.format('/contacts/%s', fun.conf.uuidContact),
-    contacts: '/contacts/',
-
-    resource: fun.utils.format('/resources/%s', fun.conf.uuidResource),
-    resources: '/resources/',
-
-    message: fun.utils.format('/messages/%s', fun.conf.uuidMessage),
-    messages: '/messages/',
-
+    login: 'https://api.codemachine.io/login/',
+    logout: 'https://lb.codemachine.io/logout',
+    users: 'https://lb.codemachine.io/users/',
+    emails: 'https://lb.codemachine.io/emails/'
 };
 
 /*
