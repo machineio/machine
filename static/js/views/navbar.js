@@ -1,10 +1,11 @@
 fun.views.navbar = Backbone.View.extend({
 
-	events: {
+    events: {
         'click #details-report-btn': 'detailsReport',
         'click #machine-login': 'machineLogin',
-        'click #machine-register': 'machineRegister'
-	},
+        'click #machine-register': 'machineRegister',
+        'click #search': 'machineSearch'
+    },
 
     initialize: function(options) {
         fun.containers.navbar = this.$el;
@@ -12,13 +13,13 @@ fun.views.navbar = Backbone.View.extend({
         this.account = localStorage.getItem("username");
         this.context = sessionStorage.getItem("context");
 
-        fun.omnibus.on("change:context", function(){
+        fun.omnibus.on("change:context", function() {
             console.log('omnibus inside navbar change:context and stuff');
             this.renderDashboard();
         }, this);
     },
-    
-    render: function(){
+
+    render: function() {
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.navbar));
 
         this.$el.html(template);
@@ -27,7 +28,7 @@ fun.views.navbar = Backbone.View.extend({
         // Cache the DOM stuff
         this.loginError = this.$('#signin-alert');
 
-        if(fun.utils.loggedIn()){
+        if (fun.utils.loggedIn()) {
             $('#header').addClass('about-header');
             console.log('Just enter the dungeon!');
             this.renderDashboard();
@@ -37,14 +38,14 @@ fun.views.navbar = Backbone.View.extend({
         }
     },
 
-    renderLanding: function(){
+    renderLanding: function() {
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.navLanding));
 
         var navLanding = this.$('#fun-nav-landing');
         navLanding.html(template);
     },
 
-    renderDashboard: function(){
+    renderDashboard: function() {
         'use strict';
         var template,
             navDashboard,
@@ -70,7 +71,7 @@ fun.views.navbar = Backbone.View.extend({
             this.$('#nav-new-org').removeClass('show').addClass('hide');
         } else {
             // if not admin, we check for user or organization accounts
-            if (account !== context && context !== null){
+            if (account !== context && context !== null) {
                 // check if context !== null fix the stuff 
                 this.$('#nav-new-org').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('hide').addClass('show');
@@ -78,12 +79,12 @@ fun.views.navbar = Backbone.View.extend({
             } else {
                 this.$('#nav-new-member').removeClass('show').addClass('hide');
                 this.$('#nav-new-team').removeClass('show').addClass('hide');
-                this.$('#nav-new-org').removeClass('hide').addClass('show');  
+                this.$('#nav-new-org').removeClass('hide').addClass('show');
             }
         }
     },
 
-    renderAdmin: function(){
+    renderAdmin: function() {
         var template = _.template(fun.utils.getTemplate(fun.conf.templates.navAdmin));
 
         var navAdmin = this.$('#fun-nav-admin');
@@ -95,9 +96,9 @@ fun.views.navbar = Backbone.View.extend({
     },
 
     /*
-    * Machine login
-    */
-    machineLogin: function(event){
+     * Machine login
+     */
+    machineLogin: function(event) {
         'use strict';
         event.preventDefault();
         var view = this,
@@ -105,28 +106,28 @@ fun.views.navbar = Backbone.View.extend({
             loginSuccess,
             username,
             password;
-        
-        loginSuccess = function(view, loginError){
+
+        loginSuccess = function(view, loginError) {
             // Clear the stuff from the inputs ;)
             view.$('#username-machine').val('');
             view.$('#password-machine').val('');
-            loginError.removeClass("show" ).addClass("hide");
+            loginError.removeClass("show").addClass("hide");
             fun.utils.redirect(fun.conf.hash.dashboard);
         };
-        
+
         fun.utils.login(username, password, {
-            success : function(jqXHR, textStatus){
+            success: function(jqXHR, textStatus) {
                 // currently this success call is never executed
                 // the success stuff is going on case 200 of the error function.
                 // Why? well... I really don't fucking know...
                 loginSuccess(view, loginError);
             },
-            error : function(jqXHR, textStatus, errorThrown) {
-                switch(jqXHR.status) {
+            error: function(jqXHR, textStatus, errorThrown) {
+                switch (jqXHR.status) {
                     case 403:
                         var message = fun.utils.translate("usernameOrPasswordError");
                         loginError.find('p').html(message);
-                        loginError.removeClass("hide" ).addClass("show");
+                        loginError.removeClass("hide").addClass("show");
                         break;
                     case 200:
                         // Check browser support
@@ -141,14 +142,14 @@ fun.views.navbar = Backbone.View.extend({
                         break;
                 }
             }
-        
+
         });
     },
 
     /*
-    * Machine register
-    */
-    machineRegister: function(event){
+     * Machine register
+     */
+    machineRegister: function(event) {
         'use strict';
         event.preventDefault();
         var view = this,
@@ -157,4 +158,23 @@ fun.views.navbar = Backbone.View.extend({
         console.log('machine register');
     },
 
+    machineSearch: function() {
+        console.log("search");
+        newFunction();
+    },
+
 });
+
+function newFunction() {
+    if ($('#search-fields').hasClass('display-block')) {
+        console.log('estuve visible')
+        $('#search-fields').removeClass('display-block').addClass('display-none').fadeOut(2600);
+        return true;
+    }
+
+    if ($('#search-fields').hasClass('display-none')) {
+        $('#search-fields').addClass('display-block').removeClass('display-none').fadeIn(2600);
+        console.log('estuve oculto');
+        return true;
+    }
+}
