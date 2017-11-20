@@ -5428,10 +5428,14 @@ footer .foot-logo{
 
 /*--- 404 Error Page --*/
 .error{
-	background-color: #f3f4f7;
+	/*background-color: #f3f4f7;
 	padding-top:80px;
 	padding-bottom:80px;
-	text-align:center;
+	text-align:center;*/
+    line-height: 2em;
+	text-align: right;
+	color: #e01111;
+	font-size: smaller;
 }
 
 .error h2{
@@ -5447,7 +5451,15 @@ footer .foot-logo{
 .error .text-2{
 	padding-top:10px;
 }
+.row div label:last-child{
+	position:  absolute;
+	bottom: -13px;
+	right: 15px;
+}
 
+.row div input, textarea{
+	position:  relative;
+}
 .error .go-back{
 	background-color: #a8c14c;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#d5c2a0), to(#a8c14c));
@@ -7733,6 +7745,10 @@ box-shadow: 0px 0px 25px 1px rgba(0,0,0,0.35);
 	display: block;
 }
 
+.display-none {
+	display: none;
+}
+
 .gray {
 	background: #cecece;
 }
@@ -7755,6 +7771,7 @@ form input {
 	width: 100%;
 	margin-bottom: 4%;
 	padding-top: 3%;
+	position:relative;
 }
 
 form button {
@@ -7765,3 +7782,8 @@ form button {
 	letter-spacing: .5px;
 	font-weight: bold;
 }
+
+.content-area {
+	margin
+}
+
