@@ -7783,28 +7783,6 @@ Color picker
         background: url(../images/patterns/5.png) repeat;
     }
     
-    .center {
-        left: 50%;
-        transform: translate(-50%);
-    }
-    
-    .left {
-        text-align: left;
-    }
-    
-    .right-corner {
-        text-align: right;
-        margin-top: 3%;
-    }
-    
-    .display-block {
-        display: block;
-    }
-    
-    .display-none {
-        display: none;
-    }
-    
     .gray {
         background: #dadada;
     }
