@@ -101,49 +101,56 @@ fun.views.navbar = Backbone.View.extend({
     machineLogin: function(event) {
         'use strict';
         event.preventDefault();
-        var view = this,
-            loginError = this.loginError,
-            loginSuccess,
-            username,
-            password;
+        $('#login-frm').validate();
+        // check jquery validation
+        if ($('#login-frm').valid()) {
+            var view = this,
+                loginError = this.loginError,
+                loginSuccess,
+                username,
+                password;
 
-        loginSuccess = function(view, loginError) {
-            // Clear the stuff from the inputs ;)
-            view.$('#username-machine').val('');
-            view.$('#password-machine').val('');
-            loginError.removeClass("show").addClass("hide");
-            fun.utils.redirect(fun.conf.hash.dashboard);
-        };
+            loginSuccess = function(view, loginError) {
+                // Clear the stuff from the inputs ;)
+                view.$('#username-machine').val('');
+                view.$('#password-machine').val('');
+                loginError.removeClass("show").addClass("hide");
+                fun.utils.redirect(fun.conf.hash.dashboard);
+            };
 
-        fun.utils.login(username, password, {
-            success: function(jqXHR, textStatus) {
-                // currently this success call is never executed
-                // the success stuff is going on case 200 of the error function.
-                // Why? well... I really don't fucking know...
-                loginSuccess(view, loginError);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                switch (jqXHR.status) {
-                    case 403:
-                        var message = fun.utils.translate("usernameOrPasswordError");
-                        loginError.find('p').html(message);
-                        loginError.removeClass("hide").addClass("show");
-                        break;
-                    case 200:
-                        // Check browser support
-                        if (typeof(Storage) != "undefined") {
-                            // Store
-                            localStorage.setItem("username", username);
-                        }
-                        loginSuccess(view, loginError);
-                        break;
-                    default:
-                        console.log('the monkey is down');
-                        break;
+            fun.utils.login(username, password, {
+                success: function(jqXHR, textStatus) {
+                    // currently this success call is never executed
+                    // the success stuff is going on case 200 of the error function.
+                    // Why? well... I really don't fucking know...
+                    loginSuccess(view, loginError);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    switch (jqXHR.status) {
+                        case 403:
+                            var message = fun.utils.translate("usernameOrPasswordError");
+                            loginError.find('p').html(message);
+                            loginError.removeClass("hide").addClass("show");
+                            break;
+                        case 200:
+                            // Check browser support
+                            if (typeof(Storage) != "undefined") {
+                                // Store
+                                localStorage.setItem("username", username);
+                            }
+                            loginSuccess(view, loginError);
+                            break;
+                        default:
+                            console.log('the monkey is down');
+                            break;
+                    }
                 }
-            }
 
-        });
+            });
+        } else {
+            $(".form-group").effect("shake");
+            console.log('missing data');
+        }
     },
 
     /*
@@ -152,29 +159,54 @@ fun.views.navbar = Backbone.View.extend({
     machineRegister: function(event) {
         'use strict';
         event.preventDefault();
-        var view = this,
-            stuff;
+        $('#register-frm').validate();
+        // check jquery validation
+        if ($('#register-frm').valid()) {
+            const data = {
+                first_name: $('#first_name').val(),
+                last_name: $('#last_name').val(),
+                email: $('#email').val(),
+                account: $('#account').val(),
+                password: $('#password').val(),
+            }
 
-        console.log('machine register');
-    },
+            var user = new fun.models.User();
+            user.url = fun.conf.urls.users + '?account=' + data.account;
+            user.save(data, {
+                success: function() {
+                    console.log(data)
+                    const date = new Date()
+                    const send = {
+                        account: 'spartaadmin',
+                        subject: 'Information requested - Contact page form',
+                        source: $('#email').val(),
+                        destination: 'bchassoul@spartanapproach.com',
+                        html: 'New accout has joined to code machine from: ' + $('#first_name').val() + ' ' + $('#last_name').val() + ', email: ' + $('#email').val()
+                    };
 
-    machineSearch: function() {
-        console.log("search");
-        newFunction();
+                    const confimation = {
+                        source: 'info@codemachine.io',
+                        subject: 'New CodeMachine Account',
+                        destination: data.email,
+                        html: 'Hi ' + data.first_name + '<br>Your new CodeMachine credentials are ready, please login using the following.<br><br>Account: ' + data.account + '<br>Password: ' + data.password + '<br><br>Regards,<br>Spartanapproach'
+                    };
+                    var model = new fun.models.Email();
+                    model.url = fun.conf.urls.emails
+                    model.save(confimation);
+                    model.save(send, {
+                        success: function(model, respose) {
+                            console.log('oh no');
+                        }
+                    });
+                }
+            });
+            console.log(data);
+            console.log(user.url);
+        } else {
+            console.log('not valid');
+        }
+        // var view = this,
+        // stuff;   
     },
 
 });
-
-function newFunction() {
-    if ($('#search-fields').hasClass('display-block')) {
-        console.log('estuve visible')
-        $('#search-fields').removeClass('display-block').addClass('display-none').fadeOut(2600);
-        return true;
-    }
-
-    if ($('#search-fields').hasClass('display-none')) {
-        $('#search-fields').addClass('display-block').removeClass('display-none').fadeIn(2600);
-        console.log('estuve oculto');
-        return true;
-    }
-}

@@ -5453,6 +5453,18 @@ MINIMAL CSS3 MENU
         background-image: -ms-linear-gradient(top, #a8c14c, #d5c2a0);
         background-image: -o-linear-gradient(top, #a8c14c, #d5c2a0);
     }
+    
+    .login label.error {
+        display: none !important;
+    }
+    
+    .login input.error::placeholder {
+        color: red;
+    }
+    
+    .login input.error {
+        border-color: red;
+    }
     /*--- FAQ Page --*/
     
     .faq {
@@ -7625,7 +7637,7 @@ MINIMAL CSS3 MENU
             padding: 20px;
         }
         #owl-1 .t-box .t-data {
-            padding-20px;
+            padding: 20px;
         }
     }
     /* ==============================

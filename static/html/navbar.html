@@ -15,24 +15,33 @@
 
                 <div class="col-md-2">
                     <h3>LOG<span class="color">IN</span> </h3>
-                    <input type="text" id='username-machine' class="input-1" placeholder="Username.." />
-                    <input type="password" id='password-machine' class="input-1" placeholder="Password.." />
-                    <div><a id="machine-login" class="c-btn-1">LOGIN</a> <a href="#" class="f-pass">Forget Password?</a></div>
+                    <form id="login-frm" class="form-inline login">
+                        <div class="form-group">
+                            <input id="username-machine" type="text" class="input-1 form-control" placeholder="Username.." required/>
+                        </div>
+                        <div class="form-group">
+                            <input id="password-machine" type="password" class="input-1 form-control" placeholder="Password.." required/>
+                        </div>
+                        <div><a id="machine-login" class="c-btn-1">LOGIN</a> <a href="#" class="f-pass">Forget Password?</a></div>
+                    </form>
                 </div>
                 <div class="col-md-6 last-col">
                     <h3>REGIS<span class="color">TER</span> </h3>
-                    <form class="form-inline">
+                    <form id="register-frm" class="form-inline login">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name">
+                            <input id="first_name" type="text" class="form-control" placeholder="First Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Last Name">
+                            <input id="last_name" type="text" class="form-control" placeholder="Last Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input id="email" type="email" class="form-control" placeholder="Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Phone">
+                            <input id="account" type="text" class="form-control" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="password" type="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div><a id="machine-register" class="c-btn-1">REGISTER</a></div>
                     </form>

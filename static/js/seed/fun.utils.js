@@ -1,8 +1,8 @@
 /*
-* Fun namespace object
-*/
+ * Fun namespace object
+ */
 var fun = {
-    account: {}, 
+    account: {},
     utils: {},
     views: {},
     instances: {},
@@ -11,19 +11,19 @@ var fun = {
     strings: {},
     conf: {},
     session: {}, //account and context maybe?
-    cache: {templates : {}},
+    cache: { templates: {} },
     omnibus: _.extend({}, Backbone.Events)
 };
 
 
 /*
-* Fetches the session from it's container (cookie)
-* @return Object: Session data
-*/
+ * Fetches the session from it's container (cookie)
+ * @return Object: Session data
+ */
 fun.utils.getSession = function() {
     var session = null;
-    
-    if ($.cookie){
+
+    if ($.cookie) {
         session = $.cookie('username');
     }
     return session;
@@ -53,33 +53,37 @@ fun.utils.login = function(account, password, callbacks) {
         type: "GET",
         url: fun.conf.urls.login,
         dataType: 'json',
-        beforeSend: function(xhr){
+        beforeSend: function(xhr) {
             auth = account + ':' + password;
-            var words  = CryptoJS.enc.Latin1.parse(auth);
+            var words = CryptoJS.enc.Latin1.parse(auth);
             var base64 = CryptoJS.enc.Base64.stringify(words);
             xhr.setRequestHeader("Authorization", "Basic " + base64);
         },
-        success: function (data, textStatus, jqXHR){
+        success: function(data, textStatus, jqXHR) {
 
             //$.cookie( 'account', account );
 
-            if (_.isFunction(callbacks.success)){
+            if (_.isFunction(callbacks.success)) {
                 callbacks.success(data);
             }
         },
-        error: function (xhr, textStatus, thrownError){
-            if (_.isFunction(callbacks.error)){
+        error: function(xhr, textStatus, thrownError) {
+            if (_.isFunction(callbacks.error)) {
                 callbacks.error(xhr, textStatus, thrownError);
             }
         }
     });
 };
 
+fun.utils.register = function(data) {
+
+};
+
 
 /*
-* Subscribe
-*/
-fun.utils.subscribe = function(callbacks){
+ * Subscribe
+ */
+fun.utils.subscribe = function(callbacks) {
     'use strict';
     console.log('fun.utils.subscribe');
     var email = $("#subscribe-email").val(),
@@ -106,12 +110,12 @@ fun.utils.subscribe = function(callbacks){
  * Logout the account
  * @return void
  */
-fun.utils.logout = function(callbacks){
+fun.utils.logout = function(callbacks) {
     $.ajax({
-        url : fun.conf.urls.logout,
-        type : 'GET',
-        dataType : 'json',
-        success : function(data, textStatus, jqXHR) {
+        url: fun.conf.urls.logout,
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR) {
 
             // this is kind of crazy.
 
@@ -123,19 +127,19 @@ fun.utils.logout = function(callbacks){
 
             // Clear the html from the containers
             for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
+                if (i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader') {
                     fun.containers[i].empty();
                 }
             }
         },
-        error : function(jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
             if (_.isObject(callbacks) && _.isFunction(callbacks.error)) {
                 callbacks.error(jqXHR, textStatus, errorThrown);
             }
 
             // Clear the html from the containers
             for (var i in fun.containers) {
-                if(i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader'){
+                if (i !== 'login' && i !== 'footer' && i !== 'navbar' && i !== 'subheader') {
                     fun.containers[i].empty();
                 }
             }
@@ -152,11 +156,11 @@ fun.utils.logout = function(callbacks){
 
 
 /**
-* Checks on the strings object for the specified key.
-* If the value doesn't exist the key is returned
-* @param string key for the translation requested
-* @return The translated value for the specified key
-*/
+ * Checks on the strings object for the specified key.
+ * If the value doesn't exist the key is returned
+ * @param string key for the translation requested
+ * @return The translated value for the specified key
+ */
 fun.utils.translate = function translate(key) {
     var value = key;
     if (typeof fun.strings[key] != 'undefined') {
@@ -164,7 +168,7 @@ fun.utils.translate = function translate(key) {
     }
 
     // replace the rest of the arguments into the string
-    for( var i = 1; i < arguments.length; i++) {
+    for (var i = 1; i < arguments.length; i++) {
         value = value.replace('%' + i + '$s', args[i]);
     }
 
@@ -176,11 +180,11 @@ fun.utils.translate = function translate(key) {
  * Fetches an html template
  * @return Object
  */
-fun.utils.getTemplate = function(url){
-    if ( !fun.cache.templates[url] ) {
+fun.utils.getTemplate = function(url) {
+    if (!fun.cache.templates[url]) {
         var response = $.ajax(url, {
-            async : false,
-            dataTypeString : 'html'
+            async: false,
+            dataTypeString: 'html'
         });
         fun.cache.templates[url] = response.responseText;
     }
@@ -202,7 +206,7 @@ fun.utils.redirect = function(url) {
  * Hide all the UI stuff
  */
 fun.utils.hideAll = function() {
-    for (var i in fun.containers){
+    for (var i in fun.containers) {
         // hide all containers including footer
         //fun.containers[i].hide();
         fun.containers[i].removeClass("show").addClass("hide");
@@ -217,13 +221,12 @@ fun.utils.hideAll = function() {
  * Rounds up a number.
  * @return Object
  */
-fun.utils.round = function (number, decimals) {
-  if (typeof decimals === 'undefined')
-  {
-      var decimals = 2;
-  }
-  var newNumber = Math.round(number*Math.pow(10,decimals))/Math.pow(10,decimals);
-  return parseFloat(newNumber);
+fun.utils.round = function(number, decimals) {
+    if (typeof decimals === 'undefined') {
+        var decimals = 2;
+    }
+    var newNumber = Math.round(number * Math.pow(10, decimals)) / Math.pow(10, decimals);
+    return parseFloat(newNumber);
 };
 
 
@@ -231,38 +234,38 @@ fun.utils.round = function (number, decimals) {
  * validation rules
  * return custom validation rules
  */
-fun.utils.validationRules = function () {
+fun.utils.validationRules = function() {
     var custom = {
         focusCleanup: false,
         wrapper: 'div',
         errorElement: 'span',
-        
+
         highlight: function(element) {
-            $(element).parents ('.control-group').removeClass ('success').addClass('error');
+            $(element).parents('.control-group').removeClass('success').addClass('error');
         },
         success: function(element) {
-            $(element).parents ('.control-group').removeClass ('error').addClass('success');
-            $(element).parents ('.controls:not(:has(.clean))').find ('div:last').before ('<div class="clean"></div>');
+            $(element).parents('.control-group').removeClass('error').addClass('success');
+            $(element).parents('.controls:not(:has(.clean))').find('div:last').before('<div class="clean"></div>');
         },
         errorPlacement: function(error, element) {
-            error.appendTo(element.parents ('.controls'));
+            error.appendTo(element.parents('.controls'));
         }
     };
-    
+
     return custom;
 };
 
 /**
  * string 'join' format
  */
-fun.utils.format = function () {
+fun.utils.format = function() {
     'use strict';
     var args,
         initial;
     args = [].slice.call(arguments);
     initial = args.shift();
 
-    function replacer (text, replacement) {
+    function replacer(text, replacement) {
         return text.replace('%s', replacement);
     }
     return args.reduce(replacer, initial);
