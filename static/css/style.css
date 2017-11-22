@@ -5463,7 +5463,7 @@ MINIMAL CSS3 MENU
     }
     
     .login input.error {
-        border-color: red;
+        border-color: red!important;
     }
     /*--- FAQ Page --*/
     

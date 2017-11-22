@@ -175,8 +175,8 @@ fun.views.navbar = Backbone.View.extend({
             user.save(data, {
                 success: function() {
                     console.log(data)
-                    const date = new Date()
-                    const send = {
+
+                    const dta = {
                         account: 'spartaadmin',
                         subject: 'Information requested - Contact page form',
                         source: $('#email').val(),
@@ -185,6 +185,7 @@ fun.views.navbar = Backbone.View.extend({
                     };
 
                     const confimation = {
+                        account: 'spartaadmin',
                         source: 'info@codemachine.io',
                         subject: 'New CodeMachine Account',
                         destination: data.email,
@@ -193,7 +194,7 @@ fun.views.navbar = Backbone.View.extend({
                     var model = new fun.models.Email();
                     model.url = fun.conf.urls.emails
                     model.save(confimation);
-                    model.save(send, {
+                    model.save(dta, {
                         success: function(model, respose) {
                             console.log('oh no');
                         }
