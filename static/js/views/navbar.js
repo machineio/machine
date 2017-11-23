@@ -107,8 +107,9 @@ fun.views.navbar = Backbone.View.extend({
             var view = this,
                 loginError = this.loginError,
                 loginSuccess,
-                username,
-                password;
+                username = $('#username-machine').val(),
+                password = $('#password-machine').val();
+
 
             loginSuccess = function(view, loginError) {
                 // Clear the stuff from the inputs ;)
@@ -117,6 +118,8 @@ fun.views.navbar = Backbone.View.extend({
                 loginError.removeClass("show").addClass("hide");
                 fun.utils.redirect(fun.conf.hash.dashboard);
             };
+
+            console.log(username, password);
 
             fun.utils.login(username, password, {
                 success: function(jqXHR, textStatus) {
@@ -148,7 +151,6 @@ fun.views.navbar = Backbone.View.extend({
 
             });
         } else {
-            $(".form-group").effect("shake");
             console.log('missing data');
         }
     },

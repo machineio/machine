@@ -12,10 +12,10 @@ fun.conf = {
     domain: 'codemachine.io',
     // seed url root
     urlRoot: '/api/',
-    
+
     // system uuid's
     uuidRecord: 'record_uuid',
-    
+
     lapse: 'lapse',
 
     startTime: 'start_time',
@@ -50,26 +50,26 @@ fun.conf.urls = {
 */
 fun.conf.templates = {
     navbar: fun.utils.format('%s/navbar.html', fun.conf.html),
-    
+
     navLanding: fun.utils.format('%s/navLanding.html', fun.conf.html),
     navDashboard: fun.utils.format('%s/navDashboard.html', fun.conf.html),
-    
+
     navAdmin: fun.utils.format('%s/navAdmin.html', fun.conf.html), // ultimate junk!
 
     subheader: fun.utils.format('%s/subheader.html', fun.conf.html),
     headNav: fun.utils.format('%s/headNav.html', fun.conf.html),
     headNavCampaigns: fun.utils.format('%s/headNavCampaigns.html', fun.conf.html),
     headNavReports: fun.utils.format('%s/headNavReports.html', fun.conf.html),
-    
+
     landing: fun.utils.format('%s/landing.html', fun.conf.html),
-    
+
     support: fun.utils.format('%s/support.html', fun.conf.html),
     features: fun.utils.format('%s/features.html', fun.conf.html),
     enterprise: fun.utils.format('%s/enterprise.html', fun.conf.html),
     howto: fun.utils.format('%s/howto.html', fun.conf.html),
     blog: fun.utils.format('%s/blog.html', fun.conf.html),
     status: fun.utils.format('%s/status.html', fun.conf.html),
-    
+
     tasks: fun.utils.format('%s/tasks.html', fun.conf.html),
     allTasks: fun.utils.format('%s/allTasks.html', fun.conf.html),
     taskRow: fun.utils.format('%s/taskRow.html', fun.conf.html),
@@ -106,30 +106,30 @@ fun.conf.templates = {
     terms: fun.utils.format('%s/terms.html', fun.conf.html),
 
     privacy: fun.utils.format('%s/privacy.html', fun.conf.html),
-    
+
     signup: fun.utils.format('%s/signup.html', fun.conf.html),
 
     login: fun.utils.format('%s/login.html', fun.conf.html),
-    
+
     dashboard: fun.utils.format('%s/dashboard.html', fun.conf.html),
 
     orgs: fun.utils.format('%s/orgs.html', fun.conf.html),
-    
+
     campaigns: fun.utils.format('%s/campaigns.html', fun.conf.html),
     allCampaigns: fun.utils.format('%s/allCampaigns.html', fun.conf.html),
     campaignRow: fun.utils.format('%s/campaignRow.html', fun.conf.html),
-    
+
     cubes: fun.utils.format('%s/cubes.html', fun.conf.html),
     allCubes: fun.utils.format('%s/allCubes.html', fun.conf.html),
     cubeRow: fun.utils.format('%s/cubeRow.html', fun.conf.html),
-   
+
 
     accountListItem: fun.utils.format('%s/accountListItem.html', fun.conf.html),
-    
+
     campaignListItem: fun.utils.format('%s/campaignListItem.html', fun.conf.html),
-    
+
     cubeListItem: fun.utils.format('%s/cubeListItem.html', fun.conf.html),
-    
+
 
     recordRow: fun.utils.format('%s/recordRow.html', fun.conf.html),
     typeRow: fun.utils.format('%s/typeRow.html', fun.conf.html),
@@ -145,14 +145,14 @@ fun.conf.templates = {
     todayActivityChart: fun.utils.format('%s/todayActivityChart.html', fun.conf.html),
 
     dialpad: fun.utils.format('%s/dialpad.html', fun.conf.html),
-    
+
     messages: fun.utils.format('%s/messages.html', fun.conf.html),
     videos: fun.utils.format('%s/videos.html', fun.conf.html),
 
     controlTo: fun.utils.format('%s/controlTo.html', fun.conf.html),
     controlFrom: fun.utils.format('%s/controlFrom.html', fun.conf.html),
     findLapse: fun.utils.format('%s/findLapse.html', fun.conf.html),
-    
+
     message: fun.utils.format('%s/message.html', fun.conf.html),
     messageSmall: fun.utils.format('%s/messageSmall.html', fun.conf.html),
     messageMedium: fun.utils.format('%s/messageMedium', fun.conf.html),
@@ -177,7 +177,7 @@ fun.conf.templates = {
     profile: fun.utils.format('%s/profile.html', fun.conf.html),
 
     activity: fun.utils.format('%s/activity.html', fun.conf.html),
-    
+
     members: fun.utils.format('%s/members.html', fun.conf.html),
     memberRow: fun.utils.format('%s/memberRow.html', fun.conf.html),
 
@@ -192,8 +192,8 @@ fun.conf.templates = {
     contactRow: fun.utils.format('%s/contactRow.html', fun.conf.html),
     directoryRow: fun.utils.format('%s/directoryRow.html', fun.conf.html),
     sounds: fun.utils.format('%s/sounds.html', fun.conf.html),
-    
-    
+
+
     reports: fun.utils.format('%s/reports.html', fun.conf.html),
     settings: fun.utils.format('%s/settings.html', fun.conf.html),
 
@@ -201,7 +201,7 @@ fun.conf.templates = {
     extraNavbar: fun.utils.format('%s/extraNavbar.html', fun.conf.html),
     extraNavLanding: fun.utils.format('%s/extraNavLanding.html', fun.conf.html),
     extraNavDashboard: fun.utils.format('%s/extraNavDashboard.html', fun.conf.html),
-    
+
     social: fun.utils.format('%s/social.html', fun.conf.html),
     subscribe: fun.utils.format('%s/subscribe.html', fun.conf.html),
 
@@ -238,7 +238,7 @@ fun.conf.hash = {
     messages: '#messages',
     resources: '#resources',
 
-    dashboard : '#dashboard',
+    dashboard: '#dashboard',
     dashboardWithAccount: '#dashboard/a{account}',
 
     profile: '#profile',

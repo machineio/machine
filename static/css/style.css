@@ -186,7 +186,7 @@ display: block;
     }
     
     .css3droppanel .content .f-pass {
-        font-size: 11px;
+        font-size: 10.5px;
         color: #32322F;
         margin-left: 5px;
         transition: .3s;
@@ -5465,6 +5465,10 @@ MINIMAL CSS3 MENU
     .login input.error {
         border-color: red!important;
     }
+    
+    .newsletter label.error {
+        padding-bottom: 3%;
+    }
     /*--- FAQ Page --*/
     
     .faq {
@@ -7799,7 +7803,7 @@ Color picker
         background: #dadada;
     }
     
-    form label {
+    .form label {
         text-align: left;
         display: block;
         text-transform: uppercase;
