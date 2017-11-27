@@ -370,28 +370,28 @@ fun.Router = Backbone.Router.extend({
             }
         };
 
-        if (fun.utils.loggedIn()) {
+        //if (fun.utils.loggedIn()) {
 
-            dashboard = translate('dashboard');
+        dashboard = translate('dashboard');
 
-            fun.utils.hideAll();
-            fun.instances.navbar.render();
+        fun.utils.hideAll();
+        fun.instances.navbar.render();
 
-            fun.instances.subheader.render(dashboard);
-            fun.instances.subheader.renderHeadNav();
+        fun.instances.subheader.render(dashboard);
+        fun.instances.subheader.renderHeadNav();
 
-            fun.instances.dashboard.render();
-            for (message in models) {
-                models[message].fetch({
-                    success: onSuccess,
-                    error: function() {
-                        console.log('error!');
-                    }
-                });
-            }
-        } else {
-            fun.utils.redirect(fun.conf.hash.login);
+        fun.instances.dashboard.render();
+        for (message in models) {
+            models[message].fetch({
+                success: onSuccess,
+                error: function() {
+                    console.log('error!');
+                }
+            });
         }
+        // } else {
+        //     fun.utils.redirect(fun.conf.hash.login);
+        // }
         fun.instances.footer.render();
     },
 
