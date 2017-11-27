@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <input id="password" type="password" name="password" class="form-control" placeholder="Password" required>
                         </div>
-                        <div><button id="machine-register" class="c-btn-1 btn">REGISTER</button></div>
+                        <div><button id="machine-register" class="c-btn-1 btn" data-toggle="modal" data-target="#register-modal">REGISTER</button></div>
                     </form>
                     <img src="static/images/lamp.png" class="lamp" alt="" />
                 </div>
@@ -60,6 +60,25 @@
                         </span>
                     </button>
                     <p></p>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="registrationModal" tabindex="-1" data-backdrop="false" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="registrationModalLabel">Code Machine successful registration</h5>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your Code Machine user was successfully created.</p>
+                            <p>An email will arrive soon with your account information.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- end panel content -->
