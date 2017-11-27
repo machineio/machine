@@ -39,8 +39,8 @@ fun.conf = {
  System urls
 */
 fun.conf.urls = {
-    login: 'https://api.spartanapproach.com',
-    logout: 'https://lb.codemachine.io/logout',
+    login: 'https://api.spartanapproach.com/login/',
+    logout: 'https://lb.codemachine.io/logout/',
     users: 'https://lb.codemachine.io/users/',
     emails: 'https://lb.codemachine.io/emails/'
 };
