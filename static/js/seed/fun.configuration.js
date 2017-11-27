@@ -39,7 +39,8 @@ fun.conf = {
  System urls
 */
 fun.conf.urls = {
-    login: 'https://api.codemachine.io/login/',
+    //login: 'https://api.codemachine.io/login/',
+    login: 'https://lb.nonsense.ws/login',
     logout: 'https://lb.codemachine.io/logout',
     users: 'https://lb.codemachine.io/users/',
     emails: 'https://lb.codemachine.io/emails/'

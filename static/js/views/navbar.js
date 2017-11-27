@@ -3,8 +3,7 @@ fun.views.navbar = Backbone.View.extend({
     events: {
         'click #details-report-btn': 'detailsReport',
         'click #machine-login': 'machineLogin',
-        'click #machine-register': 'machineRegister',
-        'click #search': 'machineSearch'
+        'click #machine-register': 'machineRegister'
     },
 
     initialize: function(options) {
@@ -119,9 +118,10 @@ fun.views.navbar = Backbone.View.extend({
                 fun.utils.redirect(fun.conf.hash.dashboard);
             };
 
-            console.log(username, password);
+
 
             fun.utils.login(username, password, {
+
                 success: function(jqXHR, textStatus) {
                     // currently this success call is never executed
                     // the success stuff is going on case 200 of the error function.
@@ -129,7 +129,8 @@ fun.views.navbar = Backbone.View.extend({
                     loginSuccess(view, loginError);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    switch (jqXHR.status) {
+                    console.log(jqXHR.status);
+                    switch (jqXHR) {
                         case 403:
                             var message = fun.utils.translate("usernameOrPasswordError");
                             loginError.find('p').html(message);
@@ -182,7 +183,7 @@ fun.views.navbar = Backbone.View.extend({
                         account: 'spartaadmin',
                         subject: 'Information requested - Contact page form',
                         source: $('#email').val(),
-                        destination: 'bchassoul@spartanapproach.com',
+                        destination: 'info@codemachine.io',
                         html: 'New accout has joined to code machine from: ' + $('#first_name').val() + ' ' + $('#last_name').val() + ', email: ' + $('#email').val()
                     };
 
@@ -191,14 +192,14 @@ fun.views.navbar = Backbone.View.extend({
                         source: 'info@codemachine.io',
                         subject: 'New CodeMachine Account',
                         destination: data.email,
-                        html: 'Hi ' + data.first_name + '<br>Your new CodeMachine credentials are ready, please login using the following.<br><br>Account: ' + data.account + '<br>Password: ' + data.password + '<br><br>Regards,<br>Spartanapproach'
+                        html: 'Hi ' + data.first_name + '<br>Your new CodeMachine credentials are ready, please login using the following.<br><br>Account: ' + data.account + '<br>Password: ' + data.password + '<br><br>Regards,<br>CodeMachine'
                     };
                     var model = new fun.models.Email();
                     model.url = fun.conf.urls.emails
                     model.save(confimation);
                     model.save(dta, {
                         success: function(model, respose) {
-                            console.log('oh no');
+                            $("#registrationModal").modal("show");
                         }
                     });
                 }
@@ -208,8 +209,6 @@ fun.views.navbar = Backbone.View.extend({
         } else {
             console.log('not valid');
         }
-        // var view = this,
-        // stuff;   
     },
 
 });
